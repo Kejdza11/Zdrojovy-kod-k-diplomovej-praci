@@ -1,16 +1,32 @@
 % VSTUPY A PARAMETRE
 
+if true % <--- NAÈÍTANIE NORMÁLNYCH DÁT
+% NORMÁLNE DÁTA :
 % Matica dennıch vınosov :
-returns = readtable('matica_vynosov.csv');
+returns = readtable('matica_vynosov_normalne_data.csv');
 returns = table2array(returns(2:757,2:31));
 
 % Matica adjusted close prices :
-matica_adjusted_prices = readtable('matica_adjclose.csv');
+matica_adjusted_prices = readtable('matica_adjclose_normalne_data.csv');
 matica_adjusted_prices = table2array(matica_adjusted_prices(:,2:31));
 
 % Bezrizikovı päroènı americkı štátny dlhopis (^FVX) :
- rf_rate = 0.04619/252; %  prevedenı na dennı vınos -> 10.10.2023 (505 deò)
-%  rf_rate = 0.0341/252; % Pre krízové dáta -> 2008-05-29 
+rf_rate = 0.04619/252; %  prevedenı na dennı vınos -> 10.10.2023 (505 deò)
+end
+
+if true % <--- NAÈÍTANIE KRÍZOVİCH DÁT
+% KRÍZOVÉ DÁTA :
+% % Matica dennıch vınosov :
+% returns = readtable('matica_vynosov_krizove_data.csv');
+% returns = table2array(returns(2:757,2:31));
+% 
+% % Matica adjusted close prices :
+% matica_adjusted_prices = readtable('matica_adjclose_krizove_data.csv');
+% matica_adjusted_prices = table2array(matica_adjusted_prices(:,2:31));
+% 
+% % Bezrizikovı päroènı americkı štátny dlhopis (^FVX) :
+%  rf_rate = 0.0341/252; % prevedenı na dennı vınos -> 29.05.2008 
+end
 
 % Rozmery :
 window_size = 504; % ve¾kos jedného rebalanèného obdobia

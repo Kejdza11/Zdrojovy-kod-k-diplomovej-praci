@@ -1,94 +1,5 @@
 % GRAFICKÉ VÝSTUPY :
 
-if true  % <--- schovanie kodu Heatmapa
-% Heatmapa váh :
-
-% MV
-figure;
-imagesc(mean_variance_weights'); 
-colorbar;  
-ylabel('Akcie');
-xlabel('Èíslo rebalanèného obdobia');
-title('Heatmapa váh portfólia MV'); 
-set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
-grid on;
-% Nastavenie ve¾kosti písma :
-set(gca, 'FontSize', 14);
-
-% Diagonal :
-figure;
-imagesc(diagonal_weights'); 
-colorbar; 
-ylabel('Akcie');
-xlabel('Èíslo rebalanèného obdobia');
-title('Heatmapa váh portfólia Diagonal'); 
-set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false)); 
-grid on;
-% Nastavenie ve¾kosti písma :
-set(gca, 'FontSize', 14);
-
-% Rolling
-figure;
-imagesc(rolling_mean_weights'); 
-colorbar;  
-ylabel('Akcie');
-xlabel('Èíslo rebalanèného obdobia');
-title('Heatmapa váh portfólia Rolling'); 
-set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
-grid on;
-% Nastavenie ve¾kosti písma :
-set(gca, 'FontSize', 14);
-
-% Ellipsoid
-figure;
-imagesc(ellipsoid_weights'); 
-colorbar;  
-ylabel('Akcie');
-xlabel('Èíslo rebalanèného obdobia');
-title('Heatmapa váh portfólia Ellipsoid'); 
-set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
-grid on;
-% Nastavenie ve¾kosti písma :
-set(gca, 'FontSize', 14);
-
-% Box-Volume
-figure;
-imagesc(box_weights'); 
-colorbar;  
-ylabel('Akcie');
-xlabel('Èíslo rebalanèného obdobia');
-title('Heatmapa váh portfólia Box_Volume'); 
-set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
-grid on;
-% Nastavenie ve¾kosti písma :
-set(gca, 'FontSize', 14);
-
-% Box-Const
-figure;
-imagesc(box_const_weights'); 
-colorbar;  
-ylabel('Akcie');
-xlabel('Èíslo rebalanèného obdobia');
-title('Heatmapa váh portfólia Box_Const'); 
-set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
-grid on;
-% Nastavenie ve¾kosti písma :
-set(gca, 'FontSize', 14);
-%%%%%%%%%%%%%%%%%%%%%
-end
-
-if true  % <--- schovanie kodu Boxplot_Weights
-% Boxploty váh portfólií :
-% [whisker_ranges_mv, idx_mv, nonzero_weights_mv] = Boxplot_Weights(mean_variance_weights, 'MV')
-% [whisker_ranges_diagonal_cov, idx_diagonal_cov, nonzero_weights_diagonal] = Boxplot_Weights(diagonal_weights,'Diagonal')
-% [whisker_ranges_rolling_mean, idx_rolling_mean, nonzero_weights_rolling] = Boxplot_Weights(rolling_mean_weights, 'Rolling')
-% [whisker_ranges_ellipsoid_mean,idx_ellipsoid_mean, nonzero_weights_ellipsoid] = Boxplot_Weights(ellipsoid_weights, 'Ellipsoid')
-% [whisker_ranges_box_mean,idx_box_mean, nonzero_weights_box_volume] = Boxplot_Weights(box_weights, 'Box-Volume')
-% [whisker_ranges_box_const_mean,idx_box_const_mean, nonzero_weights_box_const] = Boxplot_Weights(box_const_weights, 'Box-Const')
-% % [whisker_ranges_uniform,idx_uniform, nonzero_weights_uniform] = Boxplot_Weights(uniform_weights, 'Uniform');
-%%%%%%%%%%
-end
-
 if true  % <--- schovanie kodu Graf vývoja kumulatívneho kapitálu - Normálne dáta
 % Graf vývoja kumulatívneho kapitálu portfólií spolu s MDD - Normálne dáta s Diagonal portfóliom :
 figure;
@@ -167,3 +78,91 @@ if true  % <--- schovanie kodu Graf vývoja kumulatívneho kapitálu - Krízové dáta
 %%%%%%%%
 end
 
+if true  % <--- schovanie kodu Boxplot_Weights
+% Boxploty váh portfólií :
+% [whisker_ranges_mv, idx_mv, nonzero_weights_mv] = Boxplot_Weights(mean_variance_weights, 'MV')
+% [whisker_ranges_diagonal_cov, idx_diagonal_cov, nonzero_weights_diagonal] = Boxplot_Weights(diagonal_weights,'Diagonal')
+% [whisker_ranges_rolling_mean, idx_rolling_mean, nonzero_weights_rolling] = Boxplot_Weights(rolling_mean_weights, 'Rolling')
+% [whisker_ranges_ellipsoid_mean,idx_ellipsoid_mean, nonzero_weights_ellipsoid] = Boxplot_Weights(ellipsoid_weights, 'Ellipsoid')
+% [whisker_ranges_box_mean,idx_box_mean, nonzero_weights_box_volume] = Boxplot_Weights(box_weights, 'Box-Volume')
+% [whisker_ranges_box_const_mean,idx_box_const_mean, nonzero_weights_box_const] = Boxplot_Weights(box_const_weights, 'Box-Const')
+% % [whisker_ranges_uniform,idx_uniform, nonzero_weights_uniform] = Boxplot_Weights(uniform_weights, 'Uniform');
+%%%%%%%%%%
+end
+
+if true  % <--- schovanie kodu Heatmapa
+% Heatmapa váh :
+
+% MV
+figure;
+imagesc(mean_variance_weights'); 
+colorbar;  
+ylabel('Akcie');
+xlabel('Èíslo rebalanèného obdobia');
+title('Heatmapa váh portfólia MV'); 
+set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
+grid on;
+% Nastavenie ve¾kosti písma :
+set(gca, 'FontSize', 14);
+
+% Diagonal :
+figure;
+imagesc(diagonal_weights'); 
+colorbar; 
+ylabel('Akcie');
+xlabel('Èíslo rebalanèného obdobia');
+title('Heatmapa váh portfólia Diagonal'); 
+set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false)); 
+grid on;
+% Nastavenie ve¾kosti písma :
+set(gca, 'FontSize', 14);
+
+% Rolling
+figure;
+imagesc(rolling_mean_weights'); 
+colorbar;  
+ylabel('Akcie');
+xlabel('Èíslo rebalanèného obdobia');
+title('Heatmapa váh portfólia Rolling'); 
+set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
+grid on;
+% Nastavenie ve¾kosti písma :
+set(gca, 'FontSize', 14);
+
+% Ellipsoid
+figure;
+imagesc(ellipsoid_weights'); 
+colorbar;  
+ylabel('Akcie');
+xlabel('Èíslo rebalanèného obdobia');
+title('Heatmapa váh portfólia Ellipsoid'); 
+set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
+grid on;
+% Nastavenie ve¾kosti písma :
+set(gca, 'FontSize', 14);
+
+% Box-Volume
+figure;
+imagesc(box_weights'); 
+colorbar;  
+ylabel('Akcie');
+xlabel('Èíslo rebalanèného obdobia');
+title('Heatmapa váh portfólia Box_Volume'); 
+set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
+grid on;
+% Nastavenie ve¾kosti písma :
+set(gca, 'FontSize', 14);
+
+% Box-Const
+figure;
+imagesc(box_const_weights'); 
+colorbar;  
+ylabel('Akcie');
+xlabel('Èíslo rebalanèného obdobia');
+title('Heatmapa váh portfólia Box_Const'); 
+set(gca, 'XTick', 1:12, 'XTickLabel', arrayfun(@(x) sprintf('%d',x), 1:12, 'UniformOutput', false));  
+grid on;
+% Nastavenie ve¾kosti písma :
+set(gca, 'FontSize', 14);
+%%%%%%%%%%%%%%%%%%%%%
+end

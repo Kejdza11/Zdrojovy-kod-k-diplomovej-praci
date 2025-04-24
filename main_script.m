@@ -1,7 +1,7 @@
 % HLAVNİ SKRIPT
 
 % Naèítanie vstupnıch parametrov :
-input_params;  % Naèíta vstupy zo skriptu input_params.m
+input_params;  % (Treba odkomentova buï normálne alebo krízové dáta)
 
 % Spustenie CYKLU REBALANSOVANIA :
 for i = 1:num_iterations
@@ -164,9 +164,9 @@ CVaR_Box_const_Mean = calculate_CVaR(returns_last_year, box_const_weights, alpha
 %%%%%%%%%%%%%%%%%%%
 end
 
-% Tabu¾ky numerickıch vısledkov metrík :
-Tables_of_metrics_results;
+% Tabu¾ky numerickıch vısledkov metrík : 
+Tables_of_metrics_results; % (Treba odkomentova tabu¾ku buï pre normálne alebo krízové dáta)
 
 % Grafické vıstupy :
-graphical_outcomes;
+graphical_outcomes; % (Treba odkomentova tabu¾ku buï pre normálne alebo krízové dáta)
 

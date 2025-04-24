@@ -16,7 +16,7 @@ function [rolling_mean_weights] = robust_rolling_mean_optimization(data_window, 
             
         % Ohranièenia s neistotou:
         for i = 1:length(rolling_mean_vectors)
-            %-mu'*w + delta <= 0  <=> delta <= mu'*w;
+            % -mu'*w + delta <= 0  <=> delta <= mu'*w;
             -w'*rolling_mean_vectors{i}' + delta <= 0;
         end
     cvx_end
